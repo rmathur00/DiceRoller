@@ -11,13 +11,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView rollNum;
+    TextView rollNum, textMessage;
+    EditText usernumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rollNum = findViewById(R.id.number);
+        usernumber = findViewById(R.id.userNum);
+        textMessage = findViewById(R.id.message);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -44,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         Random r = new Random();
         int number = r.nextInt(6 - 1) + 1;
         rollNum.setText(Integer.toString(number));
+
+        if (usernumber.getText().toString().equals(rollNum.getText().toString())){
+            textMessage.setText("Congratulation!!! ^_^");
+        }else{
+            textMessage.setText("Not equal ~_~");
+        }
 
     }
 
