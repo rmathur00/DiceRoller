@@ -30,6 +30,7 @@
         android:layout_marginTop="156dp"
         android:hint="Enter value"
         android:id="@+id/userNum"
+        android:textAlignment="center"
         android:inputType="number"/>
 
     <Button
@@ -51,5 +52,18 @@
         android:hint="No match found"
         android:layout_alignLeft="@+id/roll"
         android:id="@+id/message"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-125dp"
+        android:layout_marginLeft="-125dp"
+        android:layout_marginBottom="626dp"
+        android:layout_toEndOf="@+id/message"
+        android:layout_toRightOf="@+id/message"
+        android:hint="No score yet"
+        android:textAlignment="center"/>
 
 </RelativeLayout>

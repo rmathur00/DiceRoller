@@ -18,8 +18,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView rollNum, textMessage;
+    TextView rollNum, textMessage, Score;
     EditText usernumber;
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         rollNum = findViewById(R.id.number);
         usernumber = findViewById(R.id.userNum);
         textMessage = findViewById(R.id.message);
+        Score = findViewById(R.id.score);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,11 +49,13 @@ public class MainActivity extends AppCompatActivity {
     public void rollButtonclicked(View view){
         // Genereates random number
         Random r = new Random();
-        int number = r.nextInt(6 - 1) + 1;
+        int number = r.nextInt(7 - 1) + 1;
         rollNum.setText(Integer.toString(number));
 
         if (usernumber.getText().toString().equals(rollNum.getText().toString())){
             textMessage.setText("Congratulation!!! ^_^");
+            count++;
+            Score.setText("Score: " + count);
         }else{
             textMessage.setText("Not equal ~_~");
         }
