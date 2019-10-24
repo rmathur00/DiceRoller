@@ -11,16 +11,20 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView rollNum, textMessage, Score;
+    TextView rollNum, textMessage, Score, Ques;
     EditText usernumber;
     int count = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         usernumber = findViewById(R.id.userNum);
         textMessage = findViewById(R.id.message);
         Score = findViewById(R.id.score);
-
+        Ques = findViewById(R.id.ques);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,11 +50,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void rollButtonclicked(View view){
-        // Genereates random number
+    public int roll_the_dice(){
         Random r = new Random();
         int number = r.nextInt(7 - 1) + 1;
-        rollNum.setText(Integer.toString(number));
+        return number;
+    }
+
+    public void rollButtonclicked(View view){
+        // Genereates random number
+        rollNum.setText(Integer.toString(roll_the_dice()));
 
         if (usernumber.getText().toString().equals(rollNum.getText().toString())){
             textMessage.setText("Congratulation!!! ^_^");
@@ -61,6 +69,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void icebreaker(View view){
+        int num = roll_the_dice()-1;
+        ArrayList<String> question= new ArrayList<>();
+
+        question.add("If you could go anywhere in the world, where would you go?");
+        question.add("If you were stranded on a desert island, what three things would you want to take with you?");
+        question.add("If you could eat only one food for the rest of your life, what would that be?");
+        question.add("If you won a million dollars, what is the first thing you would buy?");
+        question.add("If you could spaned the day with one fictional character, who would it be?");
+        question.add("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
+
+        Ques.setText(question.get(num));
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
