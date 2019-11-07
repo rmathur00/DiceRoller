@@ -1,5 +1,6 @@
 package com.example.diceroller;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView rollNum, textMessage, Score, Ques;
     EditText usernumber;
     int count = 0;
-
+   static ArrayList<String> question = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
         textMessage = findViewById(R.id.message);
         Score = findViewById(R.id.score);
         Ques = findViewById(R.id.ques);
+
+
+        question.add("If you could go anywhere in the world, where would you go?");
+        question.add("If you were stranded on a desert island, what three things would you want to take with you?");
+        question.add("If you could eat only one food for the rest of your life, what would that be?");
+        question.add("If you won a million dollars, what is the first thing you would buy?");
+        question.add("If you could spend the day with one fictional character, who would it be?");
+        question.add("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -50,15 +59,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public int roll_the_dice(){
+    public int roll_the_dice(int n){
         Random r = new Random();
-        int number = r.nextInt(7 - 1) + 1;
+        int number = r.nextInt(n);
         return number;
     }
 
     public void rollButtonclicked(View view){
         // Genereates random number
-        rollNum.setText(Integer.toString(roll_the_dice()));
+        rollNum.setText(Integer.toString(roll_the_dice(7-1)+1));
 
         if (usernumber.getText().toString().equals(rollNum.getText().toString())){
             textMessage.setText("Congratulation!!! ^_^");
@@ -71,18 +80,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void icebreaker(View view){
-        int num = roll_the_dice()-1;
-        ArrayList<String> question= new ArrayList<>();
 
-        question.add("If you could go anywhere in the world, where would you go?");
-        question.add("If you were stranded on a desert island, what three things would you want to take with you?");
-        question.add("If you could eat only one food for the rest of your life, what would that be?");
-        question.add("If you won a million dollars, what is the first thing you would buy?");
-        question.add("If you could spaned the day with one fictional character, who would it be?");
-        question.add("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
-
+        int num = roll_the_dice(question.size());
         Ques.setText(question.get(num));
 
+    }
+
+    public void changeactivity(View view){
+        Intent intent = new Intent(this,Main2Activity.class);
+        startActivity(intent);
     }
 
 

@@ -15,9 +15,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="99dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="28dp"
         android:hint="Roll the dice"
         android:textAlignment="center"
         android:textSize="25dp"
@@ -27,26 +27,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/userNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="156dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="67dp"
         android:hint="Enter value"
-        android:id="@+id/userNum"
+        android:inputType="number"
         android:textAlignment="center"
-        android:inputType="number"/>
+        android:layout_marginLeft="-2dp"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/roll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="202dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="0dp"
         android:onClick="rollButtonclicked"
         android:text="I am feeling lucky"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -54,12 +63,30 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="245dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="218dp"
         android:onClick="icebreaker"
         android:text="Let's play D-ICEBREAKERS"
         tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/icebreaker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="276dp"
+        android:onClick="changeactivity"
+        android:text="Add a new D-icebreaker"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp" />
 
     <TextView
         android:id="@+id/message"
@@ -68,10 +95,11 @@
         android:layout_alignStart="@+id/roll"
         android:layout_alignLeft="@+id/roll"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="173dp"
         android:hint="No match found"
         android:textAlignment="center"
         android:textSize="25dp" />
@@ -97,8 +125,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="1dp" />
+        android:layout_marginStart="-3dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>
