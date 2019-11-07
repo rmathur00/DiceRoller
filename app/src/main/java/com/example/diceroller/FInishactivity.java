@@ -20,7 +20,7 @@ import allbegray.slack.SlackClientFactory;
 import allbegray.slack.webapi.SlackWebApiClient;
 
 public class FInishactivity extends AppCompatActivity {
-    final String slacktoken = "xoxp-763082602722-776958805776-827687664166-c76843b23990d98b3df4d872eaa4a7b3";
+    final String slacktoken = "xoxp-763082602722-776958805776-812811254482-6576b516c19791ea470832512fec90a5";
     SlackWebApiClient mWebApiClient;
 
     private class SlackAPITask extends AsyncTask<Void, Void, Void> {
