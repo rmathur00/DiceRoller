@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="69dp"
+        android:layout_marginTop="403dp"
+        android:onClick="changeactivity"
+        android:text="Cancel"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="403dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:onClick="save"
+        android:text="Save" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/Element"
+        android:layout_height="277dp"
+        android:layout_marginTop="20dp"
+        android:hint="enter the question for D-icebreaker"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+</RelativeLayout>

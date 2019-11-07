@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText usernumber;
     int count = 0;
    static ArrayList<String> question = new ArrayList<>();
+    public static final String Extra_message = "Not working";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,13 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void finish(View view){
+        Intent i = new Intent(this, FInishactivity.class);
+        String message = Score.getText().toString();
+        i.putExtra(Extra_message,message);
+        startActivity(i);
     }
 
     @Override
